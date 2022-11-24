@@ -1,0 +1,23 @@
+.cell,.time-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cell {
+    border: 1px solid black;
+    width: 70px;
+    height: 45px;
+}
+
+.time-label {
+    width: 70px;
+    height: 45px;
+    padding: 1px;
+}
+
+.cell:hover {
+    opacity: 0.8;
+}
