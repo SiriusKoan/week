@@ -27,14 +27,19 @@ export default {
 </template>
 
 <style>
+@import "assets/base.css";
 @import "assets/time.css";
 
 body {
-    color: white;
-    background-color: #353839;
+    margin: 0;
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
 main {
+    position: absolute;
+    margin: auto 0;
+    width: 100%;
     display: flex;
     justify-content: center;
 }

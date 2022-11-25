@@ -4,20 +4,30 @@
     justify-content: center;
     margin: 0;
     background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid black;
 }
 
 .cell {
-    border: 1px solid black;
     width: 70px;
-    height: 45px;
+    height: 44px;
 }
 
 .time-label {
     width: 70px;
-    height: 45px;
-    padding: 1px;
+    height: 44px;
 }
 
 .cell:hover {
     opacity: 0.8;
 }
+
+.schedule {
+    position: absolute;
+    top: 50px;
+    width: 70px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

@@ -7,6 +7,7 @@
       <div v-else>
           <div class="weekday">{{ weekday }}</div>
           <Cell v-for="i in 18" :time="i + 5" />
+          <Schedule :time_start="360" :time_end="600" />
       </div>
   </div>
 </template>
@@ -14,11 +15,13 @@
 <script>
 import Cell from "./Cell.vue";
 import TimeLabel from "./TimeLabel.vue";
+import Schedule from "./Schedule.vue";
 export default {
   name: "Day",
   components: {
     Cell,
     TimeLabel,
+    Schedule,
   },
   props: {
       weekday: String,
@@ -39,25 +42,25 @@ export default {
     height: 20px;
 }
 
-#Sun .cell {
+#Sun .schedule {
     background-color: #AD3333;
 }
-#Mon .cell {
+#Mon .schedule {
     background-color: #3246F9;
 }
-#Tue .cell {
+#Tue .schedule {
     background-color: #46CE6C;
 }
-#Wed .cell {
+#Wed .schedule {
     background-color: #909C00;
 }
-#Thu .cell {
+#Thu .schedule {
     background-color: #7B2AA1;
 }
-#Fri .cell {
+#Fri .schedule {
     background-color: #008656;
 }
-#Sat .cell {
+#Sat .schedule {
     background-color: #FF7A00;
 }
 </style>
