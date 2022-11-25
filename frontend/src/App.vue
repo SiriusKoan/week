@@ -28,12 +28,6 @@ export default {
 @import "assets/base.css";
 @import "assets/time.css";
 
-body {
-  margin: 0;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-}
-
 main {
   position: absolute;
   margin: auto 0;

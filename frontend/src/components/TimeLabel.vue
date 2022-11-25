@@ -1,7 +1,5 @@
 <template>
-  <div class="time-label">
-    {{ time }}
-  </div>
+  <div class="time-label">{{ time }}:00</div>
 </template>
 
 <script>

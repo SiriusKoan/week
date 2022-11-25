@@ -13,7 +13,7 @@
 }
 
 .time-label {
-    width: var(--cell-width);
+    width: var(--time-label-width);
     height: var(--cell-height);
     text-align: center;
 }
