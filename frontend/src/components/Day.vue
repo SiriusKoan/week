@@ -1,66 +1,66 @@
 <template>
   <div class="day">
-      <div v-if="!weekday">
-          <div class="weekday"></div>
-          <TimeLabel v-for="i in 18" :time="i + 5" />
-      </div>
-      <div v-else>
-          <div class="weekday">{{ weekday }}</div>
-          <Cell v-for="i in 18" :time="i + 5" />
-          <Schedule :time_start="360" :time_end="600" />
-      </div>
+    <div v-if="!weekday">
+      <div class="weekday"></div>
+      <TimeLabel v-for="i in 18" v-bind:time="i + 5" />
+    </div>
+    <div v-else>
+      <div class="weekday">{{ weekday }}</div>
+      <TimeCell v-for="i in 18" v-bind:time="i + 5" />
+      <Schedule :time_start="360" :time_end="600" />
+    </div>
   </div>
 </template>
 
 <script>
-import Cell from "./Cell.vue";
+import TimeCell from "./TimeCell.vue";
 import TimeLabel from "./TimeLabel.vue";
 import Schedule from "./Schedule.vue";
 export default {
   name: "Day",
   components: {
-    Cell,
+    TimeCell,
     TimeLabel,
     Schedule,
   },
   props: {
-      weekday: String,
+    weekday: String,
   },
 };
 </script>
 
 <style>
 .day {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 
 .weekday {
-    text-align: center;
-    padding: 2px 0;
-    height: 20px;
+  text-align: center;
+  padding: 2px 0;
+  height: 20px;
 }
 
 #Sun .schedule {
-    background-color: #AD3333;
+  background-color: var(--sun-color);
 }
 #Mon .schedule {
-    background-color: #3246F9;
+  background-color: var(--mon-color);
 }
 #Tue .schedule {
-    background-color: #46CE6C;
+  background-color: var(--tue-color);
 }
 #Wed .schedule {
-    background-color: #909C00;
+  background-color: var(--wed-color);
 }
 #Thu .schedule {
-    background-color: #7B2AA1;
+  background-color: var(--thu-color);
 }
 #Fri .schedule {
-    background-color: #008656;
+  background-color: var(--fri-color);
 }
 #Sat .schedule {
-    background-color: #FF7A00;
+  background-color: var(--sat-color);
 }
 </style>

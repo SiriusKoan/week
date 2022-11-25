@@ -1,4 +1,16 @@
 :root {
     --bg-color: #353839;
-    --text-color: white;
+    --cell-bg-color: rgba(255, 255, 255, 0.2);
+    --text-color: #FEFFEC;
+    --sun-color: #AD3333;
+    --mon-color: #3246F9;
+    --tue-color: #46CE6C;
+    --wed-color: #909C00;
+    --thu-color: #7B2AA1;
+    --fri-color: #008656;
+    --sat-color: #FF7A00;
+    --border: 1px solid black;
+    --schedule-box-shadow: 0px 0px 13px 5px rgba(0,0,0,0.5);
+    --cell-width: 70px;
+    --cell-height: 44px;
 }

@@ -1,33 +1,41 @@
-.cell,.time-label {
+.time-cell,.time-label {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid black;
+    background-color: var(--cell-bg-color);
+    border: var(--border);
 }
 
-.cell {
-    width: 70px;
-    height: 44px;
+.time-cell {
+    width: var(--cell-width);
+    height: var(--cell-height);
 }
 
 .time-label {
-    width: 70px;
-    height: 44px;
+    width: var(--cell-width);
+    height: var(--cell-height);
+    text-align: center;
 }
 
-.cell:hover {
+.time-cell:hover {
     opacity: 0.8;
 }
 
 .schedule {
     position: absolute;
-    top: 50px;
-    width: 70px;
-    padding: 1px;
+    width: calc(var(--cell-width) - 2px);
+    border: var(--border);
+    padding: 0 1px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.schedule:hover {
+    -webkit-box-shadow: var(--schedule-box-shadow);
+    -moz-box-shadow: var(--schedule-box-shadow);
+    box-shadow: var(--schedule-box-shadow);
+    transition: 0.3s;
+    z-index: 2;
+}

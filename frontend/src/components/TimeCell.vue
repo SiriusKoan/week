@@ -1,12 +1,10 @@
 <template>
-  <div class="time-label">
-    {{ time }}
-  </div>
+  <div class="time-cell"></div>
 </template>
 
 <script>
 export default {
-  name: "TimeLabel",
+  name: "TimeCell",
   props: {
     time: Number,
   },

@@ -1,14 +1,12 @@
 <script lang="ts">
 import axios from "axios";
 import Day from "./components/Day.vue";
-import TimeLabel from "./components/TimeLabel.vue";
 export default {
   data() {
     return {};
   },
   components: {
     Day,
-    TimeLabel,
   },
 };
 </script>
@@ -31,16 +29,16 @@ export default {
 @import "assets/time.css";
 
 body {
-    margin: 0;
-    color: var(--text-color);
-    background-color: var(--bg-color);
+  margin: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 main {
-    position: absolute;
-    margin: auto 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  position: absolute;
+  margin: auto 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 </style>
