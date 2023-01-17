@@ -26,6 +26,7 @@
     position: absolute;
     width: calc(var(--cell-width) - 2px);
     border: var(--border);
+    border-radius: 2px;
     padding: 0 1px;
     display: flex;
     align-items: center;
@@ -38,4 +39,5 @@
     box-shadow: var(--schedule-box-shadow);
     transition: 0.3s;
     z-index: 2;
+    transform: scale(1.01);
 }
