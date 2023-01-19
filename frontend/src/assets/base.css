@@ -8,16 +8,16 @@ body {
 }
 
 :root {
-    --bg-color: #353839;
+    --bg-color: #333443;
     --cell-bg-color: rgba(255, 255, 255, 0.2);
     --text-color: #FEFFEC;
-    --sun-color: #AD3333;
-    --mon-color: #3246F9;
-    --tue-color: #46CE6C;
-    --wed-color: #909C00;
-    --thu-color: #7B2AA1;
-    --fri-color: #008656;
-    --sat-color: #FF7A00;
+    --sun-color: #BB5958;
+    --mon-color: #585EBB;
+    --tue-color: #58BB86;
+    --wed-color: #9758BB;
+    --thu-color: #B6BB58;
+    --fri-color: #5899BB;
+    --sat-color: #C69448;
     --border: 1px solid #181A18;
     --schedule-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
     --time-label-width: 80px;
