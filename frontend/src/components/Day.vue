@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .day {
   display: flex;
   flex-direction: column;
