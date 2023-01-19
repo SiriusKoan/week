@@ -20,3 +20,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+main {
+  position: absolute;
+  margin: auto 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+</style>

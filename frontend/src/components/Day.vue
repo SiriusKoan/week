@@ -2,11 +2,11 @@
   <div class="day">
     <div v-if="!weekday">
       <div class="weekday"></div>
-      <TimeLabel v-for="i in 18" v-bind:time="i + 5" />
+      <TimeLabel v-for="i in 18" v-bind:time="i + 5" v-bind:key="i + 5" />
     </div>
     <div v-else>
       <div class="weekday">{{ weekday }}</div>
-      <TimeCell v-for="i in 18" v-bind:time="i + 5" />
+      <TimeCell v-for="i in 18" v-bind:time="i + 5" v-bind:key="i + 5" />
       <Schedule :time_start="360" :time_end="600" />
     </div>
   </div>
