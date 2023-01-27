@@ -1,0 +1,5 @@
+fastapi
+pymongo
+pydantic
+uvicorn
+firebase_admin
