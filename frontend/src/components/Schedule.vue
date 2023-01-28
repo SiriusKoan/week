@@ -6,7 +6,8 @@
       top: (time_start - 360) * 0.75 + 25 + 'px',
     }"
   >
-    test
+    <div>{{ content }}</div>
+    <div>@ {{ location }}</div>
   </div>
 </template>
 
@@ -16,6 +17,8 @@ export default {
   props: {
     time_start: Number,
     time_end: Number,
+    content: String,
+    location: String,
   },
 };
 </script>

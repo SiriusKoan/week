@@ -7,7 +7,13 @@
     <div v-else>
       <div class="weekday">{{ weekday }}</div>
       <TimeCell v-for="i in 18" v-bind:time="i + 5" v-bind:key="i + 5" />
-      <Schedule :time_start="360" :time_end="600" />
+      <Schedule
+        v-for="(sche, i) in schedule"
+        :time_start="sche[0]"
+        :time_end="sche[1]"
+        :content="sche[2]"
+        :location="sche[3]"
+      />
     </div>
   </div>
 </template>
@@ -25,6 +31,7 @@ export default {
   },
   props: {
     weekday: String,
+    schedule: Array,
   },
 };
 </script>

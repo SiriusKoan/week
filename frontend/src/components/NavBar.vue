@@ -1,9 +1,17 @@
 <template>
   <nav>
-    <router-link to="/" class="nav-item" active-class="activate">Home</router-link>
-    <router-link to="/about" class="nav-item" active-class="activate">About</router-link>
-    <router-link to="/login" class="nav-item" active-class="activate">Login</router-link>
-    <router-link to="/register" class="nav-item" active-class="activate">Register</router-link>
+    <router-link to="/" class="nav-item" active-class="activate"
+      >Home</router-link
+    >
+    <router-link to="/about" class="nav-item" active-class="activate"
+      >About</router-link
+    >
+    <router-link to="/login" class="nav-item" active-class="activate"
+      >Login</router-link
+    >
+    <router-link to="/register" class="nav-item" active-class="activate"
+      >Register</router-link
+    >
   </nav>
 </template>
 
@@ -22,11 +30,11 @@ nav {
 }
 
 .nav-item {
-  color: #CCCC6E;
+  color: #cccc6e;
   text-decoration: none;
 }
 
 .activate {
-  color: #CF6E6E;
+  color: #cf6e6e;
 }
 </style>

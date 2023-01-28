@@ -1,6 +1,6 @@
 <template>
   <main>
-      <h1>Week</h1>
+    <h1>Week</h1>
   </main>
 </template>
 
@@ -12,10 +12,10 @@ export default {
 
 <style scoped>
 main {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
 }
 </style>
