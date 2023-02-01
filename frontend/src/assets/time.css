@@ -5,6 +5,7 @@
     margin: 0;
     background-color: var(--cell-bg-color);
     border: var(--border);
+    box-sizing: border-box
 }
 
 .time-cell {
