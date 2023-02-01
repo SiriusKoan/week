@@ -13,10 +13,10 @@ def get_timetable(**kwargs):
 
 
 def create_timetable(email, name, timetable):
-    if coll.find({"email": email, "name": name}).count() > 0:
+    if coll.count_documents({"email": email, "name": name}) > 0:
         return -1
     oid = coll.insert_one({"email": email, "name": name, "timetable": timetable})
-    return oid
+    return 1
 
 
 def delete_timetable(**kwargs):
