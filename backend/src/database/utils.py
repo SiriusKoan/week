@@ -7,9 +7,9 @@ db = client[db_name]
 coll = db[collection_name]
 
 
-def get_timetable(**kwargs):
-    timetable = coll.find_one({k: v for k, v in kwargs.items() if v})
-    return timetable["timetable"]
+def get_timetables(**kwargs):
+    timetables = list(coll.find({k: v for k, v in kwargs.items() if v}))
+    return [{"name": t["name"], "timetable": t["timetable"]} for t in timetables]
 
 
 def create_timetable(email, name, timetable):

@@ -2,7 +2,7 @@ from fastapi import FastAPI, Header, Request
 from .models import Timetable
 from .firebase import get_user
 from .database import (
-    get_timetable,
+    get_timetables,
     create_timetable,
     delete_timetable,
     update_timetable,
@@ -38,15 +38,22 @@ def get_timetable_api(request: Request, email: str, name: str) -> Timetable:
     user = request.state.uid
     if user != email:
         return gen_json_response("Permission denied.", 403)
-    return {"name": name, "timetable": get_timetable(email=email, name=name)}
+    timetable = get_timetables(email=email, name=name)
+    if timetable:
+        timetable = timetable[0]
+        return {"name": timetable["name"], "timetable": timetable["timetable"]}
+    else:
+        return gen_json_response("Not found.", 404)
 
 
 @app.get("/api/{email}")
-def get_timetable_by_user_api(request: Request, email: str):
+def get_timetable_by_user_api(request: Request, email: str) -> list[str]:
     user = request.state.uid
     if user != email:
         return gen_json_response("Permission denied.", 403)
-    return {}
+    timetables = get_timetables(email=email)
+    print(timetables)
+    return [t["name"] for t in timetables]
 
 
 @app.post("/api/create")
