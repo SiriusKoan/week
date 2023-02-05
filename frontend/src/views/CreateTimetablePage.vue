@@ -33,6 +33,7 @@ export default {
       name: "",
       timetable: [],
       schedule: [...Array(7)].map((x) => []),
+      auth: getAuth(),
     };
   },
   methods: {
@@ -57,15 +58,28 @@ export default {
       ]);
     },
     sendCreate() {
-      const auth = getAuth();
       let token = "";
       let data = { name: this.name, timetable: toRaw(this.timetable) };
-      auth.onAuthStateChanged((user) => {
+      this.auth.onAuthStateChanged((user) => {
         token = `${user.accessToken}`;
         let headers = { Authorization: `Bearer ${token}` };
-        axios.post("/api/create", data, { headers: headers }).then((res) => {
-          console.log(res);
-        });
+        axios
+          .post("/api/create", data, { headers: headers })
+          .then((res) => {
+            this.$emit("notify", "success", "Successfully created.");
+          })
+          .catch((error) => {
+            let status_code = error.response.status;
+            if (status_code == 400) {
+              this.$emit(
+                "notify",
+                "error",
+                "The timetable name is already in use."
+              );
+            } else if (status_code == 401) {
+              this.$emit("notify", "error", "You need to login first.");
+            }
+          });
       });
     },
   },
