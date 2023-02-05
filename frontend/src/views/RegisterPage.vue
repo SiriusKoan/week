@@ -7,23 +7,30 @@
   </main>
 </template>
 
-<script setup>
-import { ref } from "vue";
+<script>
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "vue-router";
-const email = ref("");
-const password = ref("");
-const router = useRouter();
-const auth = getAuth();
-const register = () => {
-  createUserWithEmailAndPassword(auth, email.value, password.value)
-    .then((data) => {
-      console.log("Successfully registered!");
-      router.push("/");
-    })
-    .catch((error) => {
-      console.log(error.code);
-      alert(error.message);
-    });
+export default {
+  name: "RegisterPage",
+  data() {
+    return {
+      email: "",
+      password: "",
+      auth: getAuth(),
+      router: useRouter(),
+    };
+  },
+  methods: {
+    register() {
+      createUserWithEmailAndPassword(this.auth, this.email, this.password)
+        .then((data) => {
+          this.$emit("notify", "success", "Successfully registered!");
+          this.router.push("/");
+        })
+        .catch((error) => {
+          this.$emit("notify", "error", error.message);
+        });
+    },
+  },
 };
 </script>
