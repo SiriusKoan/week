@@ -11,4 +11,5 @@ class TimeCell(BaseModel):
 
 class Timetable(BaseModel):
     name: str
+    public: bool
     timetable: list[TimeCell]

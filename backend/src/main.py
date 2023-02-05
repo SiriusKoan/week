@@ -36,12 +36,18 @@ def index():
 @app.get("/api/{email}/{name}")
 def get_timetable_api(request: Request, email: str, name: str) -> Timetable:
     user = request.state.uid
-    if user != email:
-        return gen_json_response("Permission denied.", 403)
     timetable = get_timetables(email=email, name=name)
     if timetable:
         timetable = timetable[0]
-        return {"name": timetable["name"], "timetable": timetable["timetable"]}
+        return_data = {
+            "name": timetable["name"],
+            "public": timetable["public"],
+            "timetable": timetable["timetable"],
+        }
+        if user == email or timetable["public"]:
+            return return_data
+        else:
+            return gen_json_response("Permission denied.", 403)
     else:
         return gen_json_response("Not found.", 404)
 
@@ -52,7 +58,6 @@ def get_timetable_by_user_api(request: Request, email: str) -> list[str]:
     if user != email:
         return gen_json_response("Permission denied.", 403)
     timetables = get_timetables(email=email)
-    print(timetables)
     return [t["name"] for t in timetables]
 
 
@@ -60,7 +65,10 @@ def get_timetable_by_user_api(request: Request, email: str) -> list[str]:
 def create_timetable_api(request: Request, timetable: Timetable):
     timetable_json = timetable.dict()
     oid = create_timetable(
-        request.state.uid, timetable_json["name"], timetable_json["timetable"]
+        request.state.uid,
+        timetable_json["public"],
+        timetable_json["name"],
+        timetable_json["timetable"],
     )
     if oid < 0:
         return gen_json_response("duplicate name", 400)
