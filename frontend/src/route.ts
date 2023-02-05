@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import MainPage from "./views/MainPage.vue";
 import LoginPage from "./views/LoginPage.vue";
-import LogoutPage from "./views/LogoutPage.vue";
 import RegisterPage from "./views/RegisterPage.vue";
 import AboutPage from "./views/AboutPage.vue";
 import UserTimetablesPage from "./views/UserTimetablesPage.vue";
@@ -14,7 +13,6 @@ export const router = createRouter({
   routes: [
     { path: "/", component: MainPage },
     { path: "/login", component: LoginPage },
-    { path: "/logout", component: LogoutPage },
     { path: "/register", component: RegisterPage },
     { path: "/about", component: AboutPage },
     { path: "/create", component: CreateTimetablePage },
