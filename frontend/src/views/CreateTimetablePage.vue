@@ -1,6 +1,12 @@
 <template>
   <main>
-    <input type="text" v-model="name" placeholder="Timetable Name" required />
+    <div>
+      <input type="text" v-model="name" placeholder="Timetable Name" required />
+    </div>
+    <div>
+      <span>Public: </span>
+      <input type="checkbox" v-model="public_option" />
+    </div>
     <CreateTimetableForm @add="addTimeCell" />
     <button @click="sendCreate">Create</button>
     <div id="timetable-container">
@@ -31,6 +37,7 @@ export default {
   data() {
     return {
       name: "",
+      public_option: false,
       timetable: [],
       schedule: [...Array(7)].map((x) => []),
       auth: getAuth(),
@@ -59,7 +66,11 @@ export default {
     },
     sendCreate() {
       let token = "";
-      let data = { name: this.name, timetable: toRaw(this.timetable) };
+      let data = {
+        name: this.name,
+        public: this.public_option,
+        timetable: toRaw(this.timetable),
+      };
       this.auth.onAuthStateChanged((user) => {
         token = `${user.accessToken}`;
         let headers = { Authorization: `Bearer ${token}` };

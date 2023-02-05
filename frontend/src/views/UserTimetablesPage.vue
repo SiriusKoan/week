@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>Timetable for {{ email }}</h1>
-    <div v-for="timetable in timetables">
+    <div v-for="(timetable, i) in timetables" v-bind:key="i">
       <a :href="'/' + email + '/' + timetable">{{ timetable }}</a>
     </div>
   </main>

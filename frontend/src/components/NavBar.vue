@@ -37,10 +37,10 @@ export default {
     });
   },
   methods: {
-      logout() {
-          this.auth.signOut();
-          this.router.push("/");
-      },
+    logout() {
+      this.auth.signOut();
+      this.router.push("/");
+    },
   },
 };
 </script>
@@ -59,7 +59,7 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .activate {
@@ -67,11 +67,11 @@ nav a:hover {
 }
 
 #logout-btn {
-    color: #cccc6e;
-    cursor: pointer;
+  color: #cccc6e;
+  cursor: pointer;
 }
 
 #logout-btn:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 </style>

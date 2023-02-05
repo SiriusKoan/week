@@ -9,6 +9,7 @@
       <TimeCell v-for="i in 18" v-bind:time="i + 5" v-bind:key="i + 5" />
       <Schedule
         v-for="(sche, i) in schedule"
+        v-bind:key="i"
         :time_start="sche[0]"
         :time_end="sche[1]"
         :content="sche[2]"
