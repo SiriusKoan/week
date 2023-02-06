@@ -14,9 +14,9 @@ export default {
 
 <style scoped>
 footer {
+  width: 100%;
   text-align: center;
   position: absolute;
-  bottom: 10px;
 }
 
 a {

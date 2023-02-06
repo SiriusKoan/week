@@ -11,6 +11,7 @@
     <router-link v-if="authed" to="/create" active-class="activate">
       Create
     </router-link>
+    <router-link v-if="authed" :to="'/' + user" active-class="activate">Dashboard</router-link>
     <div v-if="authed" id="logout-btn" @click="logout">Logout</div>
   </nav>
 </template>
@@ -24,12 +25,14 @@ export default {
     return {
       authed: false,
       auth: getAuth(),
+      user: "",
       router: useRouter(),
     };
   },
   created() {
     this.auth.onAuthStateChanged((user) => {
       if (user) {
+        this.user = user.email;
         this.authed = true;
       } else {
         this.authed = false;
